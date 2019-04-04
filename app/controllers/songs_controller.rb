@@ -43,7 +43,7 @@ class SongsController < ApplicationController
   end
 
   def song_params
-    params.permit!
+    params.require(:song).permit!
   end
 
 
