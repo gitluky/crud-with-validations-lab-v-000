@@ -22,7 +22,7 @@ class Song < ActiveRecord::Base
   end
 
   def check_artist_name_for_string_type
-    errors.add(artist_name, 'artist_name should be a string') unless artist_name.is_a?(String)
+    errors.add(:artist_name, 'artist_name should be a string') unless artist_name.is_a?(String)
   end
 
 end
