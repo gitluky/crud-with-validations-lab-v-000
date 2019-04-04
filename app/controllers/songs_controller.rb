@@ -33,7 +33,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to index
+    redirect_to songs
   end
 
   private
