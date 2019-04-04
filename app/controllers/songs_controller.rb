@@ -15,6 +15,7 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to song_path(@song)
     else
+      @errors = @song.errors
       render :new
     end
   end
