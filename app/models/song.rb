@@ -17,12 +17,9 @@ class Song < ActiveRecord::Base
     released == true
   end
 
-  def check_title_for_string_type
-    errors.add(:title, 'title should be a string') unless title.is_a?(String)
+  def check_for_string_type(field)
+    errors.add(field, 'title should be a string') unless title.is_a?(String)
   end
 
-  def check_artist_name_for_string_type
-    errors.add(:artist_name, 'artist_name should be a string') unless artist_name.is_a?(String)
-  end
 
 end
