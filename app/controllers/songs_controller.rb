@@ -29,6 +29,7 @@ class SongsController < ApplicationController
 
   def delete
     @song.destroy
+    redirect_to :index
   end
 
   private
