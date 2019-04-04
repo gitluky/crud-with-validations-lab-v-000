@@ -1,5 +1,5 @@
 <%= form_for @song do |f| %>
-  <% if @errors %>
+  <% if @song.errors.any? %>
     <div>
       <ul>
         <% @errors.messages.each do |message| %>
