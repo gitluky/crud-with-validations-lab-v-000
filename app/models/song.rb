@@ -1,6 +1,5 @@
 class Song < ActiveRecord::Base
   validates :title,:artist_name, presence: true
-  validate :check_for_string_type(:title), :check_for_string_type(:artist_name), :check_for_string_type(:genre)
   validate :unique_title_for_year
   validates :released, inclusion: { in: [true, false], message: "value is not true or false"}
   validates :release_year, presence: true, if: :song_released?
@@ -16,10 +15,5 @@ class Song < ActiveRecord::Base
   def song_released?
     released == true
   end
-
-  def check_for_string_type(field)
-    errors.add(field, 'title should be a string') unless title.is_a?(String)
-  end
-
 
 end
