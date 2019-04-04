@@ -2,7 +2,7 @@
   <% if @song.errors.any? %>
     <div>
       <ul>
-        <% @errors.messages.each do |message| %>
+        <% @song.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
