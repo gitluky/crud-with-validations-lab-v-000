@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 if RUBY_VERSION>='2.6.0'
   if Rails.version < '5'
     class ActionController::TestResponse < ActionDispatch::TestResponse
@@ -13,6 +14,7 @@ if RUBY_VERSION>='2.6.0'
     puts "Monkeypatch for ActionController::TestResponse no longer needed"
   end
 end
+
 RSpec.describe SongsController, type: :controller do
   let(:valid_attributes) do
     {
